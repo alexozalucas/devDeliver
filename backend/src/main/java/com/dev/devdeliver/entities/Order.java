@@ -18,8 +18,10 @@ import javax.persistence.Table;
 @Table(name = "tb_order")
 public class Order implements Serializable {
 
-	private static final long serialVersionUID = 1L;
+	
 
+
+	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
@@ -31,15 +33,16 @@ public class Order implements Serializable {
 	private Double total;
 
 	@ManyToMany
-	@JoinTable(name = "tb_order_product", joinColumns = @JoinColumn(name = "order_id"), inverseJoinColumns = @JoinColumn(name = "product_id"))
+	@JoinTable(name = "tb_order_product", 
+		joinColumns = @JoinColumn(name = "order_id"),
+		inverseJoinColumns = @JoinColumn(name = "product_id"))
 	private Set<Product> products = new HashSet<>();
 
 	public Order() {
 
 	}
 
-	public Order(Long id, String address, Double latitude, Double longitude, Instant moment, OrderStatus status
-			) {
+	public Order(Long id, String address, Double latitude, Double longitude, Instant moment, OrderStatus status) {
 		super();
 		this.id = id;
 		this.address = address;
