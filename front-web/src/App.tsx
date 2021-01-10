@@ -1,4 +1,4 @@
-import Navbar from './Navbar';
+
 import './App.css';
 import Routes from './Routes';
 
@@ -6,11 +6,7 @@ import Routes from './Routes';
 
 function App() {
   return (
-    <>
-      <Navbar />
-      <Routes />
-     
-    </>
+    <Routes></Routes>
   );
 }
 
