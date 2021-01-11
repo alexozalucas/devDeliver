@@ -96,18 +96,22 @@ public class Order implements Serializable {
 	public OrderStatus getStatus() {
 		return status;
 	}
+	
+	
+	public Double getTotal() {
+		double sum=0.0;
+		for(Product p: products) {
+			sum += p.getPrice();
+		}
+		return sum;
+		
+	}
 
 	public void setStatus(OrderStatus status) {
 		this.status = status;
 	}
 
-	public Double getTotal() {
-		return total;
-	}
 
-	public void setTotal(Double total) {
-		this.total = total;
-	}
 
 	public Set<Product> getProducts() {
 		return products;
